@@ -11,6 +11,9 @@ from app.models.subscription import Subscription
 from app.models.payment import Payment
 from app.models.course import Course, UserProgress
 from app.models.referral import Referral, Commission, WithdrawalRequest
+from app.models.product import Product
+from app.models.category import Category
+from app.models.order import Order
 from urllib.parse import urlparse
 
 @asynccontextmanager
@@ -30,7 +33,10 @@ async def lifespan(app: FastAPI):
             UserProgress,
             Referral,
             Commission,
-            WithdrawalRequest
+            WithdrawalRequest,
+            Product,
+            Category,
+            Order
         ]
     )
     yield
